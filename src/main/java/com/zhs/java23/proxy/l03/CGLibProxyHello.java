@@ -12,7 +12,6 @@ public class CGLibProxyHello implements MethodInterceptor{
 	
 	public Object bind(Object target){
 		this.target = target;
-		Enhancer en = new Enhancer();
         //创建加强器,用来创建动态代理类
         Enhancer enhancer = new Enhancer();
         //为加强器指定要代理的业务类(即:为下面生成的代理类指定父类)
