@@ -13,7 +13,7 @@ public class AdapterTest {
 		//02
 		Target tar1 = new Adapter02(new Adaptee());
 		tar1.twoCha();
-		
+				
 	}
 
 }
