@@ -12,7 +12,7 @@ public class Test {
 		int target = 7;
 		findIndex(nums,target,saveIndex);
 		System.out.println(saveIndex.toString());
-		int c;
+		int c = 0;
 		System.out.println(c);
 	}
 	
