@@ -12,6 +12,8 @@ public class Test {
 		int target = 7;
 		findIndex(nums,target,saveIndex);
 		System.out.println(saveIndex.toString());
+		int c;
+		System.out.println(c);
 	}
 	
 	public static void findIndex(int[] nums,int target,Map<Integer, Integer> saveIndex){
@@ -26,4 +28,12 @@ public class Test {
 		}
 	}
 
+}
+class NULL {
+    public static void haha() {
+        System.out.println("haha");
+    }
+    public static void main(String[] args) {
+        ((NULL) null).haha();
+    }
 }
