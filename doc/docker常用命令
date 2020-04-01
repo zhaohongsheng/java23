@@ -82,5 +82,23 @@ docker import id
 7数据卷 可以在容器之间共享和重用,一直存在
 docker volume  create my-vool
 docker volume  rm my-vool
-8
+创建共享目录
+docker run -itd -v my-vool:/webapp java:8 /bin/sh
+清理所有不用目录
+docker volume prune 
+8 容器互联
+docker network create -d bridge my-net
+docker run -it --rm --name busybox1 --network my-net busybox sh
 
+docker run --name mysql-slave -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root --network my-net -d mysql:5.7
+docker run --name mysql-master -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root --network my-net -d mysql:5.7
+
+apt-get install iputils-ping
+
+mater执行
+grant replication slave on *.* to 'bankup'@'%' identified by 'bankup';
+show grants for 'bankup'@'%';
+
+change master to master_host='mysql-master',master_port=3306,master_user='bankup',master_password='bankup';
+
+show slave status;
